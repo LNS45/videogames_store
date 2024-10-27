@@ -1,0 +1,43 @@
+
+<div class="form_container">
+    <h1>Crear Cuenta</h1>
+    <form class="form" [formGroup]="group">
+        <div class="form_campo">
+            <label for="nombre">Nombre Completo:</label>
+            <input formControlName="nombre" type="text" placeholder="Ingrese su nombre completo">
+            <div class="form_campo_errors">
+                <p class="form_campo_error" *ngIf="group.get('nombre')?.errors?.['required'] && group.get('nombre')?.touched">El nombre es requerido</p>
+            </div>
+        </div>
+        <div class="form_campo">
+            <label for="email">Email:</label>
+            <input formControlName="email" type="email" placeholder="Ingrese su email">
+            <div class="form_campo_errors">
+                <p class="form_campo_error" *ngIf="group.get('email')?.errors?.['required'] && group.get('email')?.touched">El email es requerido</p>
+                <p class="form_campo_error" *ngIf="group.get('email')?.errors?.['email'] && group.get('email')?.touched">Ingrese un email válido</p>
+            </div>
+        </div>
+        <div class="form_campo">
+            <label for="contraseña">Contraseña:</label>
+            <input formControlName="contraseña" type="password" placeholder="Ingrese su contraseña">
+            <div class="form_campo_errors">
+                <p class="form_campo_error" *ngIf="group.get('contraseña')?.errors?.['required'] && group.get('contraseña')?.touched">La contraseña es requerida</p>
+            </div>
+        </div>
+        <div class="form_campo">
+            <label for="confirmaContraseña">Confirmar Contraseña:</label>
+            <input formControlName="confirmaContraseña" type="password" placeholder="Confirme su contraseña">
+            <div class="form_campo_errors">
+                <p class="form_campo_error" *ngIf="group.get('confirmaContraseña')?.errors?.['required'] && group.get('confirmaContraseña')?.touched">Confirme su contraseña</p>
+                <p class="form_campo_error" *ngIf="!confirmarContrasena() && group.get('confirmaContraseña')?.touched">La contraseña no coincide</p>
+            </div>
+        </div>
+        <button type="button" (click)="onSubmit()">Registrar</button>
+    </form>
+    <p>
+        ¿Ya tienes una cuenta?
+        <a routerLink="/login" routerLinkActive="active">
+            <b>Inicia sesión aquí</b>
+        </a>
+    </p>
+</div>

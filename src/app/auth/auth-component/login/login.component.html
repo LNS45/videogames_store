@@ -1,0 +1,28 @@
+
+
+<div class="form_container">
+    <h1>Iniciar Sesión</h1>
+    <form class="form" [formGroup]="group">
+        <div class="form_campo">
+            <label for="usuario">Usuario:</label>
+            <input formControlName="usuario" type="text" placeholder="Ingrese su usuario">
+            <div class="form_campo_errors">
+                <p class="form_campo_error" *ngIf="group.get('usuario')?.invalid && this.group.get('usuario')?.touched">El usuario es requerido</p>
+            </div>
+        </div>
+        <div class="form_campo">
+            <label for="contraseña">Contraseña:</label>
+            <input formControlName="contraseña" type="password" placeholder="Ingrese su contraseña">
+            <div class="form_campo_errors">
+                <p class="form_campo_error" *ngIf="this.group.get('contraseña')?.invalid && this.group.get('contraseña')?.touched">La contraseña es requerida</p>
+            </div>
+        </div>
+        <button type="button" (click)="onSubmit()">Iniciar Sesión</button>
+    </form>
+    <p>
+        ¿No tienes una cuenta? 
+        <a routerLink="/register" routerLinkActive="active">
+            <b>Regístrate aquí</b>
+        </a>
+    </p>
+</div>
