@@ -3,7 +3,7 @@
 .card_contenedor{
     background: #1E1E1E;
     width: 260px;
-    height: 21.875rem;
+    height: 390px;
     border-radius: .9375rem;
     box-shadow: 1px 1px 8px #3A80E8;
     padding: 10px;
@@ -14,7 +14,7 @@
     margin-top: 1.875rem;
 }
 .card_contenedor h4{
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .card_contenedor img{
@@ -39,6 +39,9 @@
 
 .card_contenedor button:hover{
     background: #3A80E8;
+}
+.card_data{
+    height: 23.75rem;
 }
 
 .card_info{

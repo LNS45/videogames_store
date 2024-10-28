@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -8,13 +8,40 @@ import { Component } from '@angular/core';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-  title : string = "Titulo";
-  description: string = "Descripcion detallada del juego";
-  releaseDate: string = "2024-12-10";
-  image: string = "url";
-  rating: number = 5;
-  downloads: number = 2000;
-  comingSoon: boolean = false;
+  //Objeto con los datos del videojuego, se reciben en la creacion del componente
+  @Input() data! : {
+    id : number;
+    title : string;
+    description: string;
+    releaseDate: string;
+    image: string;
+    rating: number;
+    downloads: number;
+    comingSoon: boolean;
+  };
+  //Propiedades de la card, con esto se llenan los datos en el HTML
+  id! : number;
+  title! : string;
+  description!: string;
+  releaseDate!: string;
+  image!: string;
+  rating!: number;
+  downloads!: number;
+  comingSoon!: boolean;
 
-  
+  ngOnInit(): void {
+    if (this.data) {
+      this.id = this.data.id;
+      this.title = this.data.title;
+      this.description = this.data.description;
+      this.releaseDate = this.data.releaseDate;
+      this.image = this.data.image;
+      this.rating = this.data.rating;
+      this.downloads = this.data.downloads;
+      this.comingSoon = this.data.comingSoon;
+    }
+  }
+  constructor() {
+
+  }
 }

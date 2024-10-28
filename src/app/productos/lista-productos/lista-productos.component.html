@@ -4,13 +4,6 @@
     <h2>{{titulo}}</h2>
     <hr>
     <div class="listaProductos_cards_contenedor">
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
+        <app-card *ngFor="let videojuego of lista_videojuegos; let index = index;" [data]='lista_videojuegos[index]'></app-card>
     </div>
 </section>
