@@ -4,3 +4,11 @@
     width: 100%;
     color: #FFFFFF;
 }
+
+.listaProductos_cards_contenedor{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
