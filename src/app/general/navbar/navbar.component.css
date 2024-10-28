@@ -1,0 +1,38 @@
+
+/*
+Fondo Principal	Azul Oscuro	#0D1A2D
+Fondos Secundarios	Gris Oscuro	#1A1A1A
+Botón Primario	Azul Brillante	#0B5ED7
+Hover / Botón Secundario	Azul Claro	#3A80E8
+Detalles Destacados	Rojo	#E63946
+Texto Principal	Blanco	#FFFFFF
+Títulos / Encabezados	Azul Brillante	#0B5ED7
+Texto Secundario	Gris Claro	#B0B3B8
+Precio / Texto Importante	Rojo	#E63946
+*/
+
+.nav_container{
+    background: #1A1A1A;
+    width: 100%;
+    height: 3.125rem;
+    box-shadow: 1px 1px 15px #3A80E8;
+}
+.nav_list{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav_list_item{
+    list-style: none;
+    color: #FFFFFF;
+}
+.nav_list_item_link{
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.nav_list_item_link:hover{
+    color: #3A80E8;
+    font-weight: 800;
+}

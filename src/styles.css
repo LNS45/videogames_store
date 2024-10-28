@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+/*RESET CSS*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body{
     background: #0D1A2D;
     font-family: "Roboto Mono", monospace;
