@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AuthUserService } from '../../../servicios/auth-user.service';
 
 @Component({
   selector: 'app-login',
@@ -21,20 +22,26 @@ export class LoginComponent {
 
   group: FormGroup;
 
-  constructor(){
+  constructor(private usuariosDb: AuthUserService, private router: Router){
     this.group = new FormGroup({
       usuario: new FormControl("",Validators.required),
       contraseña: new FormControl("",[Validators.required])
     })
+
   }
 
   ngOnInit():void{
   }
 
   onSubmit():void{
-    console.log(this.group.get('contraseña')?.errors);
     if(this.group.valid){
-      alert("Formulario valido");
+      if(this.usuariosDb.checkUser(this.group.get('usuario')?.value, this.group.get('contraseña')?.value)){
+        alert("Bienvenido " + this.group.get('usuario')?.value);
+        this.router.navigate(["/home"]);
+      }
+      else{
+        alert("Acceso denegado");
+      }
     }
     else{
       alert("Formulario no valido");

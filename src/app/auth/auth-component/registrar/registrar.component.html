@@ -18,6 +18,13 @@
             </div>
         </div>
         <div class="form_campo">
+            <label for="usuario">Usuario:</label>
+            <input formControlName="usuario" type="text" placeholder="Ingrese su usuario">
+            <div class="form_campo_errors">
+                <p class="form_campo_error" *ngIf="group.get('usuario')?.errors?.['required'] && group.get('usuario')?.touched">El usuario es requerido</p>
+            </div>
+        </div>
+        <div class="form_campo">
             <label for="contraseña">Contraseña:</label>
             <input formControlName="contraseña" type="password" placeholder="Ingrese su contraseña">
             <div class="form_campo_errors">

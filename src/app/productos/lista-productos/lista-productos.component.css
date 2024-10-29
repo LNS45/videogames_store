@@ -1,7 +1,8 @@
 
 
 .listaProductos_contenedor{
-    width: 100%;
+    margin: auto;
+    max-width: 75rem;
     color: #FFFFFF;
 }
 
