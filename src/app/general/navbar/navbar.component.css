@@ -25,11 +25,12 @@ Precio / Texto Importante	Rojo	#E63946
 }
 .nav_list_item{
     list-style: none;
-    color: #FFFFFF;
 }
 .nav_list_item_link{
     cursor: pointer;
     transition: .2s ease-in-out;
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
 .nav_list_item_link:hover{

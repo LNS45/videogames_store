@@ -37,11 +37,11 @@ export class AuthUserService {
     try {
       const usuario = this.usuarios.find((u) => u.user === user && u.password === password);
       if(usuario){
-        console.log("Usuario con esas credenciales encontrado: " + usuario);
+        //console.log("Usuario con esas credenciales encontrado: " + usuario);
         usuarioEncontrado = true;
       }
       else{
-        console.log("Usuario no encontrado");
+        //console.log("Usuario no encontrado");
         usuarioEncontrado = false;
       }
     } catch (e) {

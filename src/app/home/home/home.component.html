@@ -2,5 +2,6 @@
 <app-navbar></app-navbar>
 <main class="contenido">
     <!--Creacion dinamica segun cantidad de datos-->
-    <app-lista-productos [titulo]="mostrarTituloLista"></app-lista-productos>
+    <app-lista-productos [titulo]="mostrarTituloLista" *ngIf="rutaHomeActiva" [lista_videojuegos]="datos"> </app-lista-productos>
+    <router-outlet></router-outlet>
 </main>

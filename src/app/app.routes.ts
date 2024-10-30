@@ -3,6 +3,9 @@ import { AuthComponentComponent } from './auth/auth-component/auth-component.com
 import { LoginComponent } from './auth/auth-component/login/login.component';
 import { RegistrarComponent } from './auth/auth-component/registrar/registrar.component';
 import { HomeComponent } from './home/home/home.component';
+import { PopularesComponent } from './home/populares/populares.component';
+import { MasDescargadosComponent } from './home/mas-descargados/mas-descargados.component';
+import { ProximamenteComponent } from './home/proximamente/proximamente.component';
 
 export const routes: Routes = [
     {   
@@ -28,5 +31,20 @@ export const routes: Routes = [
     {
         path: "home",
         component: HomeComponent,
+        children: [
+            {
+                path: "populares",
+                component: PopularesComponent
+            },
+            {
+                path: "masDescargados",
+                component: MasDescargadosComponent
+            },
+            {
+                path: "proximamente",
+                component: ProximamenteComponent
+            },
+
+        ]
     }
 ];
