@@ -1,0 +1,58 @@
+
+
+
+<app-navbar></app-navbar>
+<div class="add_container">
+    <div class="form_container">
+        <h1>Agregar Videojuego</h1>
+        <form class="form" [formGroup]="group_add">
+            <div class="form_campo">
+                <label for="titulo">Título:</label>
+                <input formControlName="titulo" type="text" placeholder="Ingrese el título">
+                <div class="form_campo_errors">
+                    <p class="form_campo_error" *ngIf="group_add.get('titulo')?.errors?.['required'] && group_add.get('titulo')?.touched">El título es requerido</p>
+                </div>
+            </div>
+            <div class="form_campo">
+                <label for="descripcion">Descripcion:</label>
+                <input formControlName="descripcion" type="text" placeholder="Ingrese la descripción">
+                <div class="form_campo_errors">
+                    <p class="form_campo_error" *ngIf="group_add.get('descripcion')?.errors?.['required'] && group_add.get('descripcion')?.touched">La descripción es requerida</p>
+                </div>
+            </div>
+            <div class="form_campo">
+                <label for="fecha_Lanzamiento">Fecha de lanzamiento:</label>
+                <input formControlName="fecha_Lanzamiento" type="text" placeholder="Día-Mes-Año">
+                <div class="form_campo_errors">
+                    <p class="form_campo_error" *ngIf="group_add.get('fecha_Lanzamiento')?.errors?.['required'] && group_add.get('fecha_Lanzamiento')?.touched">La fecha es requerida</p>
+                </div>
+            </div>
+            <div class="form_campo">
+                <label for="url_image">URL de Imagen:</label>
+                <input formControlName="url_image" type="text" placeholder="Ingrese la URL de la imagen">
+                <div class="form_campo_errors">
+                    <p class="form_campo_error" *ngIf="group_add.get('url_image')?.errors?.['required'] && group_add.get('url_image')?.touched">La URL de la imagen es requerida</p>
+                </div>
+            </div>
+            <div class="form_campo">
+                <label for="rating">Rating: <b class="form_campo_range_value">{{inputRangeValue}}</b> ⭐</label>
+                <input formControlName="rating" type="range" placeholder="Ingrese el rating" min="1" max="5" step=".1" value="4" [(ngModel)]="inputRangeValue">
+                <div class="form_campo_errors">
+                    <p class="form_campo_error" *ngIf="group_add.get('rating')?.errors?.['required'] && group_add.get('rating')?.touched">El rating es requerido</p>
+                </div>
+            </div>
+            <div class="form_campo">
+                <label for="descargas">Descargas:</label>
+                <input formControlName="descargas" type="number" placeholder="Ingrese la cantidad de descargas">
+                <div class="form_campo_errors">
+                    <p class="form_campo_error" *ngIf="group_add.get('descargas')?.errors?.['required'] && group_add.get('descargas')?.touched">La cantidad de descargas es requerida</p>
+                </div>
+            </div>
+            <div class="form_campo form_campo_fechaLanzamiento">
+                <label for="proximamente">Próximo a estrenar:</label>
+                <input class="form_campo_check" formControlName="proximamente" type="checkbox" placeholder="Indique si el videojuego está próximo a estrenar">
+            </div>
+            <button type="button" (click)="onSubmit()">Agregar</button>
+        </form>
+    </div>
+</div>

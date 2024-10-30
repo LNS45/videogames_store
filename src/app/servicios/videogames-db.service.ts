@@ -1,8 +1,7 @@
-import { Injectable, NgModule } from '@angular/core';
+import { Injectable} from '@angular/core';
 
 //Para crear un array de Videogame para la base de datos estatica
 export interface Videogame{
-  id: number;
   title: string;
   description: string;
   releaseDate: string;
@@ -23,7 +22,6 @@ export class VideogamesDbService {
   constructor(){
     this.videogamesDB = [
       {
-        id: 1,
         title: "The Legend of Zelda: Tears of the Kingdom",
         description: "Un juego de acción y aventura en un mundo abierto ambientado en Hyrule.",
         releaseDate: "2023-05-12",
@@ -33,7 +31,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 2,
         title: "Baldur's Gate 3",
         description: "Un videojuego de rol basado en Dungeons & Dragons.",
         releaseDate: "2023-08-03",
@@ -43,7 +40,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 3,
         title: "Spider-Man 2",
         description: "Un juego de acción y aventura donde juegas como Spider-Man y Miles Morales.",
         releaseDate: "2023-10-20",
@@ -53,7 +49,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 4,
         title: "Resident Evil 4 (Remake)",
         description: "Un remake del clásico juego de horror de supervivencia ambientado en un misterioso pueblo.",
         releaseDate: "2023-03-24",
@@ -63,7 +58,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 5,
         title: "Assassin's Creed Mirage",
         description: "Un juego de acción y aventura que regresa a las raíces de la serie, ambientado en Bagdad.",
         releaseDate: "2023-10-05",
@@ -73,7 +67,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 6,
         title: "Alan Wake II",
         description: "Una secuela de la aclamada historia de horror psicológico en un mundo abierto.",
         releaseDate: "2023-10-27",
@@ -83,7 +76,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 7,
         title: "Horizon Forbidden West",
         description: "Un juego de acción y aventura en un mundo abierto post-apocalíptico lleno de máquinas.",
         releaseDate: "2022-02-18",
@@ -93,7 +85,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 8,
         title: "Tekken 8",
         description: "La última entrega de la famosa serie de juegos de lucha, con nuevos personajes y mecánicas.",
         releaseDate: "2024-01-26",
@@ -103,7 +94,6 @@ export class VideogamesDbService {
         comingSoon: true,
       },
       {
-        id: 9,
         title: "Mortal Kombat 1",
         description: "El último capítulo de la legendaria serie de juegos de lucha con nuevos personajes y mecánicas.",
         releaseDate: "2023-09-14",
@@ -113,7 +103,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 10,
         title: "The Binding of Isaac",
         description: "Un juego de acción y aventura en el que controlas a Isaac en su lucha contra monstruos y enemigos.",
         releaseDate: "2011-09-28",
@@ -123,7 +112,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 11,
         title: "Ghost of Tsushima",
         description: "Un juego de acción y aventura en un mundo abierto que sigue a un samurái en su lucha contra la invasión mongola.",
         releaseDate: "2020-07-17",
@@ -133,7 +121,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 12,
         title: "Elden Ring",
         description: "Un juego de rol de acción ambientado en un vasto mundo abierto lleno de misterios y peligros.",
         releaseDate: "2022-02-25",
@@ -143,7 +130,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 13,
         title: "WWE 2K24",
         description: "La última entrega de la popular serie de videojuegos de lucha libre, con nuevos modos de juego y luchadores.",
         releaseDate: "2024-12-05",
@@ -153,7 +139,6 @@ export class VideogamesDbService {
         comingSoon: true,
       },
       {
-        id: 14,
         title: "Far Cry 6",
         description: "Un juego de acción y aventura en un mundo abierto donde luchas contra un régimen dictatorial en una isla tropical.",
         releaseDate: "2021-10-07",
@@ -163,7 +148,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 15,
         title: "Sons of the Forest",
         description: "Un juego de supervivencia en un mundo abierto lleno de peligros y misterios, donde debes sobrevivir.",
         releaseDate: "2023-02-23",
@@ -173,7 +157,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 16,
         title: "Red Dead Redemption 2",
         description: "Un juego de acción y aventura en un mundo abierto ambientado en el viejo oeste, que sigue la historia de una banda de forajidos.",
         releaseDate: "2018-10-26",
@@ -183,7 +166,6 @@ export class VideogamesDbService {
         comingSoon: false,
       },
       {
-        id: 17,
         title: "Silent Hill 2",
         description: "Videojuego de terror del subgénero de horror de supervivencia desarrollado por Team Silent y publicado por Konami.",
         releaseDate: "2024-10-26",
@@ -193,7 +175,6 @@ export class VideogamesDbService {
         comingSoon: true,
       },
       {
-        id: 18,
         title: "Dragon Ball Sparking Zero",
         description: "Lucha en combates que desafían la gravedad y las habilidades Ki de todos los personajes.",
         releaseDate: "2024-10-31",
@@ -233,6 +214,10 @@ export class VideogamesDbService {
     })
     //console.log("Ejecutando 3");
     return listaJuegoPorFecha;
+  }
+
+  agregarJuego(juego: Videogame){
+    this.videogamesDB.push(juego);
   }
 
 }

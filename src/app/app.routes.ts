@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home/home.component';
 import { PopularesComponent } from './home/populares/populares.component';
 import { MasDescargadosComponent } from './home/mas-descargados/mas-descargados.component';
 import { ProximamenteComponent } from './home/proximamente/proximamente.component';
+import { FormAgregarJuegoComponent } from './agregar-juego/form-agregar-juego/form-agregar-juego.component';
 
 export const routes: Routes = [
     {   
@@ -46,5 +47,9 @@ export const routes: Routes = [
             },
 
         ]
+    },
+    {
+        path: 'agregarJuego',
+        component: FormAgregarJuegoComponent
     }
 ];
