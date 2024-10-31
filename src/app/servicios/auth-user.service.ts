@@ -16,6 +16,7 @@ export interface Usuario{
 export class AuthUserService {
 
   private usuarios: Usuario[];
+  private accesoPermitido: boolean = false;
 
   constructor() {
     this.usuarios = [
@@ -33,22 +34,29 @@ export class AuthUserService {
   }
 
   checkUser(user : string, password : string) : boolean {
-    let usuarioEncontrado : boolean = false;
     try {
       const usuario = this.usuarios.find((u) => u.user === user && u.password === password);
       if(usuario){
         //console.log("Usuario con esas credenciales encontrado: " + usuario);
-        usuarioEncontrado = true;
+        return this.accesoPermitido = true;
       }
       else{
         //console.log("Usuario no encontrado");
-        usuarioEncontrado = false;
+        return this.accesoPermitido = false;
       }
     } catch (e) {
       console.log("Hubo un error: " + e)
     }
 
-    return usuarioEncontrado;
+    return this.accesoPermitido;
+  }
+
+  getAuthStatus(): boolean {
+    return this.accesoPermitido;
+  }
+
+  logout(): void {
+    this.accesoPermitido = false;
   }
 
 }

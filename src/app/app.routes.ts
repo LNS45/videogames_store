@@ -7,6 +7,7 @@ import { PopularesComponent } from './home/populares/populares.component';
 import { MasDescargadosComponent } from './home/mas-descargados/mas-descargados.component';
 import { ProximamenteComponent } from './home/proximamente/proximamente.component';
 import { FormAgregarJuegoComponent } from './agregar-juego/form-agregar-juego/form-agregar-juego.component';
+import { authGuardGuard } from './auth-guard.guard';
 
 export const routes: Routes = [
     {   
@@ -32,6 +33,7 @@ export const routes: Routes = [
     {
         path: "home",
         component: HomeComponent,
+        canActivate: [authGuardGuard],
         children: [
             {
                 path: "populares",
@@ -50,6 +52,7 @@ export const routes: Routes = [
     },
     {
         path: 'agregarJuego',
+        canActivate: [authGuardGuard],
         component: FormAgregarJuegoComponent
     }
 ];

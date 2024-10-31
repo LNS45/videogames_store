@@ -10,7 +10,6 @@ import { Component, Input, NgModule } from '@angular/core';
 export class CardComponent {
   //Objeto con los datos del videojuego, se reciben en la creacion del componente
   @Input() data! : {
-    id : number;
     title : string;
     description: string;
     releaseDate: string;
@@ -20,7 +19,6 @@ export class CardComponent {
     comingSoon: boolean;
   };
   //Propiedades de la card, con esto se llenan los datos en el HTML
-  id! : number;
   title! : string;
   description!: string;
   releaseDate!: string;
@@ -31,7 +29,6 @@ export class CardComponent {
 
   ngOnInit(): void {
     if (this.data) {
-      this.id = this.data.id;
       this.title = this.data.title;
       this.description = this.data.description;
       this.releaseDate = this.data.releaseDate;

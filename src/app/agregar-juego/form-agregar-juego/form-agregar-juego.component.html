@@ -22,7 +22,7 @@
             </div>
             <div class="form_campo">
                 <label for="fecha_Lanzamiento">Fecha de lanzamiento:</label>
-                <input formControlName="fecha_Lanzamiento" type="text" placeholder="Día-Mes-Año">
+                <input formControlName="fecha_Lanzamiento" type="text" placeholder="Año-Mes-Día">
                 <div class="form_campo_errors">
                     <p class="form_campo_error" *ngIf="group_add.get('fecha_Lanzamiento')?.errors?.['required'] && group_add.get('fecha_Lanzamiento')?.touched">La fecha es requerida</p>
                 </div>
